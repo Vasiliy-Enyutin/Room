@@ -6,7 +6,6 @@ namespace PlayerLogic
     {
         private Vector3 _moveDirection = Vector3.zero;
 
-
         public Vector3 MoveDirection => _moveDirection;
 
 
