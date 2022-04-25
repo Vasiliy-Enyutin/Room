@@ -1,10 +1,11 @@
+using FishNet.Object;
 using UnityEngine;
 
 namespace PlayerLogic
 {
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(PlayerStats))]
-    public class PlayerMover : MonoBehaviour
+    public class PlayerMover : NetworkBehaviour
     {
         private CharacterController _characterController;
         private PlayerStats _playerStats;
@@ -24,6 +25,7 @@ namespace PlayerLogic
             Move();
         }
 
+        [Client(RequireOwnership = true)]
         private void Move()
         {
             Vector3 _movementDirection = _inputReader.MoveDirection;
