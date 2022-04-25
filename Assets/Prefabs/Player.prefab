@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7867510066566991238}
   - component: {fileID: 7867510066566991239}
   - component: {fileID: 3754551726838920614}
+  - component: {fileID: -6731052921689695670}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -90,6 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7c384f6022cbf7489570b9abfc4f366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentIndexCache: 0
+  _addedNetworkObject: {fileID: 3754551726838920614}
+  _networkObjectCache: {fileID: 3754551726838920614}
 --- !u!114 &7867510066566991263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,18 +192,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetworkObserver: {fileID: 0}
-  _prefabId: -1
+  _prefabId: 4
   _scenePathHash: 0
   _sceneId: 0
   _sceneNetworkObjects:
   - {fileID: 3754551726838920614}
-  _networkBehaviours: []
+  _networkBehaviours:
+  - {fileID: 7867510066566991232}
+  - {fileID: -6731052921689695670}
   SceneTransformProperties:
     Position: {x: 0, y: 0.11, z: -1.002}
     Rotation: {x: 0, y: 0, z: 0, w: 1}
     LocalScale: {x: 1, y: 1, z: 1}
   _isNetworked: 1
   ChildNetworkObjects: []
+--- !u!114 &-6731052921689695670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867510066566991261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentIndexCache: 1
+  _addedNetworkObject: {fileID: 3754551726838920614}
+  _networkObjectCache: {fileID: 3754551726838920614}
+  _synchronizeParent: 0
+  _packing:
+    Position: 1
+    Rotation: 1
+    Scale: 0
+  _interpolation: 2
+  _extrapolation: 0
+  _enableTeleport: 0
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _synchronizePosition: 1
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
 --- !u!1001 &7867510065580220225
 PrefabInstance:
   m_ObjectHideFlags: 0
