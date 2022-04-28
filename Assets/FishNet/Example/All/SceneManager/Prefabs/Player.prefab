@@ -55,6 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,6 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5090726669533971462
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5090726669533971481
 Transform:
   m_ObjectHideFlags: 0
@@ -261,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetworkObserver: {fileID: 0}
-  _prefabId: 23
+  _prefabId: 3
   _scenePathHash: 0
   _sceneId: 0
   _sceneNetworkObjects: []
@@ -269,7 +271,6 @@ MonoBehaviour:
   - {fileID: 5090726670223187108}
   - {fileID: 6420552185407096997}
   - {fileID: 6654616088585099699}
-  - {fileID: 0}
   SceneTransformProperties:
     Position: {x: 0, y: 1.34, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -309,8 +310,11 @@ MonoBehaviour:
   _componentIndexCache: 2
   _addedNetworkObject: {fileID: 611616139817875448}
   _networkObjectCache: {fileID: 611616139817875448}
-  _compress: 1
   _synchronizeParent: 0
+  _packing:
+    Position: 1
+    Rotation: 1
+    Scale: 0
   _interpolation: 2
   _extrapolation: 0
   _enableTeleport: 0
