@@ -1,9 +1,10 @@
+using FishNet.Object;
 using UI;
 using UnityEngine;
 
 namespace PlayerLogic
 {
-    public class ClothesSelector : MonoBehaviour
+    public class ClothesSelector : NetworkBehaviour
     {
         [SerializeField] private GameObject[] _bodies;
         [SerializeField] private GameObject[] _pants;
@@ -26,6 +27,9 @@ namespace PlayerLogic
 
         private void SelectClothesType(ClothesTypes clothesType)
         {
+            if (base.IsOwner == false)
+                return;
+            
             if (clothesType == ClothesTypes.Body)
                 ChangeClothes(_bodies, ref _currentBodyArrayIndex);
             else if (clothesType == ClothesTypes.Pants)

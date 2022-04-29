@@ -1,11 +1,15 @@
+using FishNet.Object;
 using UnityEngine;
 
 namespace PlayerLogic
 {
-    public class PlayerCollisionDetector : MonoBehaviour
+    public class PlayerCollisionDetector : NetworkBehaviour
     {        
         private void OnTriggerEnter(Collider other)
         {
+            if (base.IsOwner == false)
+                return;
+            
             if (other.TryGetComponent(out IOpenable openable))
             {
                 openable.Open();
@@ -19,6 +23,9 @@ namespace PlayerLogic
 
         private void OnTriggerExit(Collider other)
         {
+            if (base.IsOwner == false)
+                return;
+            
             if (other.TryGetComponent(out IOpenable openable))
             {
                 openable.Close();
