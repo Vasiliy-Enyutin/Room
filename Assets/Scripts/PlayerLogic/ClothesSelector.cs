@@ -6,13 +6,9 @@ namespace PlayerLogic
 {
     public class ClothesSelector : NetworkBehaviour
     {
-        [SerializeField] private GameObject[] _bodies;
-        [SerializeField] private GameObject[] _pants;
-        [SerializeField] private GameObject[] _boots;
-
-        [SerializeField] private int _currentBodyArrayIndex;
-        [SerializeField] private int _currentPantsArrayIndex;
-        [SerializeField] private int _currentBootsArrayIndex;
+        [SerializeField] private ClothesTypes _clothesType;
+        [SerializeField] private GameObject[] _clothes;
+        [SerializeField] private int _currentClothesArrayIndex;
 
 
         private void OnEnable()
@@ -27,22 +23,17 @@ namespace PlayerLogic
 
         private void SelectClothesType(ClothesTypes clothesType)
         {
-            if (base.IsOwner == false)
+            if (base.IsOwner == false || clothesType != _clothesType)
                 return;
             
-            if (clothesType == ClothesTypes.Body)
-                ChangeClothes(_bodies, ref _currentBodyArrayIndex);
-            else if (clothesType == ClothesTypes.Pants)
-                ChangeClothes(_pants, ref _currentPantsArrayIndex);
-            else if (clothesType == ClothesTypes.Boots)
-                ChangeClothes(_boots, ref _currentBootsArrayIndex);
+            ChangeClothes(ref _currentClothesArrayIndex);
         }
 
-        private void ChangeClothes(GameObject[] clothes, ref int currentIndex)
+        private void ChangeClothes(ref int currentIndex)
         {
-            clothes[currentIndex].SetActive(false);
-            currentIndex = ++currentIndex % clothes.Length;
-            clothes[currentIndex].SetActive(true);
+            _clothes[currentIndex].SetActive(false);
+            currentIndex = ++currentIndex % _clothes.Length;
+            _clothes[currentIndex].SetActive(true);
         }
     }
 }
