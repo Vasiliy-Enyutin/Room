@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PlayerLogic
 {
-    public class ClothesSelector : NetworkBehaviour
+    public class ClothesChanger : NetworkBehaviour
     {
         [SerializeField] private ClothesTypes _clothesType;
         [SerializeField] private GameObject[] _clothes;
