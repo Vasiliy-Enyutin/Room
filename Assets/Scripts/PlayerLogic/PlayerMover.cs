@@ -5,15 +5,13 @@ namespace PlayerLogic
 {
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(PlayerStats))]
-    [RequireComponent(typeof(PlayerInputReader))]
     [RequireComponent(typeof(PlayerAnimationController))]
     public class PlayerMover : NetworkBehaviour
     {
         private CharacterController _characterController;
         private PlayerStats _playerStats;
         private PlayerAnimationController _playerAnimationController;
-        private PlayerInputReader _inputReader;
-        
+
         private Vector3 _movementDirection;
 
 
@@ -22,7 +20,6 @@ namespace PlayerLogic
             _characterController = GetComponent<CharacterController>();
             _playerStats = GetComponent<PlayerStats>();
             _playerAnimationController = GetComponent<PlayerAnimationController>();
-            _inputReader = GetComponent<PlayerInputReader>();
         }
 
         private void Update()
@@ -30,7 +27,7 @@ namespace PlayerLogic
             if (!base.IsOwner)
                 return;
             
-            _movementDirection = _inputReader.MoveDirection;
+            _movementDirection = PlayerInputReader.MoveDirection;
             Move();
             UpdateAnimation();
         }
