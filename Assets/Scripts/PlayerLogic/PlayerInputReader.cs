@@ -2,16 +2,14 @@ using UnityEngine;
 
 namespace PlayerLogic
 {
-    public class PlayerInputReader : MonoBehaviour
+    public static class PlayerInputReader
     {
-        private Vector3 _moveDirection = Vector3.zero;
-
-        public Vector3 MoveDirection => _moveDirection;
-
-
-        private void Update()
+        public static Vector3 MoveDirection
         {
-            _moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            get
+            {
+                return new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            }
         }
     }
 }
